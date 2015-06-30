@@ -1,5 +1,5 @@
 {
-    "name": "zendframework/skeleton-application",
+    "name": "shineisp/shineisp-core",
     "description": "ShineISP Application",
     "license": "BSD-3-Clause",
     "keywords": [
@@ -10,9 +10,14 @@
         {
             "type": "vcs",
             "url": "http://github.com/Darkmatus/RoleUserBridge"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/shineisp/ShineISPAdmin"
         }
+
     ],
-    "homepage": "http://framework.zend.com/",
+    "homepage": "https://github.com/shineisp/",
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.3.*",
@@ -29,6 +34,7 @@
         "thadafinser/zfc-datagrid": "dev-master",
         "tecnick.com/tcpdf": "dev-master",
         "cderue/googlemaps": "dev-master",
-        "rwoverdijk/assetmanager":"*"
+        "rwoverdijk/assetmanager":"*",
+        "shineisp/shineisp-admin":"dev-master"
     }
 }

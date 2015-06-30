@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "95ed43d813c6a9143c198ea891d890e1",
+    "hash": "6c5fc94aa2aa94d76190e82893c73327",
     "packages": [
         {
             "name": "bjyoungblood/bjy-authorize",
