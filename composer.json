@@ -13,7 +13,11 @@
         },
         {
           "type": "vcs",
-          "url": "https://github.com/shineisp/ShineISPAdmin"
+          "url": "https://github.com/shineisp/Admin"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/shineisp/Base"
         }
 
     ],
@@ -35,6 +39,7 @@
         "tecnick.com/tcpdf": "dev-master",
         "cderue/googlemaps": "dev-master",
         "rwoverdijk/assetmanager":"*",
-        "shineisp/shineisp-admin":"dev-master"
+        "shineisp/shineisp-admin":"dev-master",
+        "shineisp/shineisp-base":"dev-master"
     }
 }
