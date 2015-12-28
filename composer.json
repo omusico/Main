@@ -30,7 +30,7 @@
         "zf-commons/zfc-user": "1.2.*",
         "zf-commons/zfc-admin": "0.1.*",
         "socalnick/scn-social-auth": "dev-master",
-        "hybridauth/hybridauth": "2.4.*",
+        "hybridauth/hybridauth": "2.4.1",
         "phly/phly-contact": "dev-master", 
         "zendframework/zendservice-recaptcha": "dev-master",
         "goalio/goalio-forgotpassword": "1.*",
@@ -38,8 +38,6 @@
         "thadafinser/zfc-datagrid": "dev-master",
         "tecnick.com/tcpdf": "dev-master",
         "cderue/googlemaps": "dev-master",
-        "rwoverdijk/assetmanager":"*",
-        "shineisp/shineisp-admin":"dev-master",
-        "shineisp/shineisp-base":"dev-master"
+        "rwoverdijk/assetmanager":"*"
     }
 }
