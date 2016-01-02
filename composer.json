@@ -1,6 +1,6 @@
 {
     "name": "shineisp/shineisp-core",
-    "description": "ShineISP Application",
+    "description": "ShineISP Core Application",
     "license": "BSD-3-Clause",
     "minimum-stability": "dev",
     "keywords": [
