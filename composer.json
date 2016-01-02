@@ -37,7 +37,8 @@
         "thadafinser/zfc-datagrid":             "dev-master",
         "tecnickcom/tcpdf":                     "dev-master",
         "cderue/googlemaps":                    "dev-master",
-        "rwoverdijk/assetmanager":              "*"
+        "rwoverdijk/assetmanager":              "*",
+        "phly/phly-contact":                    "dev-master"
     },
 
     "require-dev": {
