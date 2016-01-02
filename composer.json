@@ -7,9 +7,24 @@
         "framework",
         "zf2"
     ],
+    "repositories": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/shineisp/Admin"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/shineisp/Base"
+        }
+
+    ],
     "homepage": "https://github.com/shineisp/",
     "require": {
         "php": ">=5.3.3",
+
+        "shineisp/shineisp-base":       "dev-master",
+        "shineisp/shineisp-admin":      "dev-master",
+
         "zendframework/zend-developer-tools": "0.*",
         "firephp/firephp-core": "dev-master",
         "bjyoungblood/bjy-profiler": "1.*",
