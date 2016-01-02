@@ -2,7 +2,25 @@
 return array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
-        'Application',
+        'ZendDeveloperTools',
+        'AssetManager',
+
+        // Generic modules for the main application
+        'ScnSocialAuth',
+        'ZfcBase',
+        'ZfcUser',
+        'PhlyContact',  // Contact module
+        'GoalioMailService',
+        'GoalioForgotPassword',
+        'ZfcDatagrid',
+        'ZfcAdmin',
+        'BjyAuthorize',
+        'GoogleMaps',
+
+        // ShineISP modules start
+        // pay attention: the position of the module affects the routes and the assets
+        'Core',
+        'Base',
         'Admin',
     ),
 

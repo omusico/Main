@@ -22,21 +22,24 @@
     "require": {
         "php": ">=5.3.3",
 
-        "shineisp/shineisp-base":       "dev-master",
-        "shineisp/shineisp-admin":      "dev-master",
+        "shineisp/shineisp-base":               "dev-master",
+        "shineisp/shineisp-admin":              "dev-master",
 
-        "zendframework/zend-developer-tools": "0.*",
-        "firephp/firephp-core": "dev-master",
-        "bjyoungblood/bjy-profiler": "1.*",
-        "zf-commons/zfc-user": "1.2.*",
-        "zf-commons/zfc-admin": "0.1.*",
-        "socalnick/scn-social-auth": "dev-master",
-        "zendframework/zendservice-recaptcha": "dev-master",
-        "goalio/goalio-forgotpassword": "1.*",
-        "bjyoungblood/bjy-authorize": "1.5.0-beta1",
-        "thadafinser/zfc-datagrid": "dev-master",
-        "tecnickcom/tcpdf": "dev-master",
-        "cderue/googlemaps": "dev-master",
-        "rwoverdijk/assetmanager":"*"
+        "zf-commons/zfc-user":                  "1.2.*",
+        "zf-commons/zfc-admin":                 "0.1.*",
+        "socalnick/scn-social-auth":            "dev-master",
+        "zendframework/zendservice-recaptcha":  "dev-master",
+        "goalio/goalio-forgotpassword":         "1.*",
+        "bjyoungblood/bjy-authorize":           "1.5.0-beta1",
+        "thadafinser/zfc-datagrid":             "dev-master",
+        "tecnickcom/tcpdf":                     "dev-master",
+        "cderue/googlemaps":                    "dev-master",
+        "rwoverdijk/assetmanager":              "*"
+    },
+
+    "require-dev": {
+      "zendframework/zend-developer-tools":     "0.*",
+      "firephp/firephp-core":                   "dev-master",
+      "bjyoungblood/bjy-profiler":              "1.*"
     }
 }
