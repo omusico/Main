@@ -25,6 +25,9 @@
         "shineisp/shineisp-base":               "dev-master",
         "shineisp/shineisp-admin":              "dev-master",
 
+        "zendframework/zend-developer-tools":   "dev-master",
+        "firephp/firephp-core":                 "dev-master",
+        "bjyoungblood/bjy-profiler":            "1.*",
         "zf-commons/zfc-user":                  "1.2.*",
         "zf-commons/zfc-admin":                 "0.1.*",
         "socalnick/scn-social-auth":            "dev-master",
@@ -38,8 +41,6 @@
     },
 
     "require-dev": {
-      "zendframework/zend-developer-tools":     "0.*",
-      "firephp/firephp-core":                   "dev-master",
-      "bjyoungblood/bjy-profiler":              "1.*"
+
     }
 }
