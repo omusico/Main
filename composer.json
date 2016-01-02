@@ -40,8 +40,12 @@
         "rwoverdijk/assetmanager":              "*",
         "phly/phly-contact":                    "dev-master"
     },
-
-    "require-dev": {
-
+    "autoload": {
+      "psr-0": {
+        "Core": "src/"
+      },
+      "classmap": [
+        "./Module.php"
+      ]
     }
 }
