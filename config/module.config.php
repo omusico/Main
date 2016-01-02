@@ -2,12 +2,23 @@
 /**
  * Zend Framework (http://framework.zend.com/)
  *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
+ * @link      http://github.com/zendframework/ZendSkeletoncms for the canonical source repository
+ * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
 return array(
+    'bjyauthorize' => array(
+        'guards' => array(
+            'BjyAuthorize\Guard\Route' => array(
+
+                // ZfcUser module
+                array('route' => 'core', 'roles' => array('guest')),
+
+            ),
+        ),
+    ),
+
     'router' => array(
         'routes' => array(
             'home' => array(
@@ -24,7 +35,7 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'application' => array(
+            'core' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     'route'    => '/',
