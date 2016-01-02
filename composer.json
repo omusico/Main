@@ -7,21 +7,6 @@
         "framework",
         "zf2"
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "http://github.com/Darkmatus/RoleUserBridge"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/shineisp/Admin"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/shineisp/Base"
-        }
-
-    ],
     "homepage": "https://github.com/shineisp/",
     "require": {
         "php": ">=5.3.3",
