@@ -57,11 +57,7 @@ return array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
-        'factories' => array(
-            'translator' => 'Zend\Mvc\Service\TranslatorServiceFactory',
-        ),
     ),
-
     'controllers' => array(
         'invokables' => array(
             'Core\Controller\Index' => 'Core\Controller\IndexController'
