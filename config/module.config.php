@@ -8,6 +8,32 @@
  */
 
 return array(
+    'asset_manager' => array(
+        'resolver_configs' => array(
+            'collections' => array(
+                'js/administration.js' => array(
+                    'commons/js/jquery-1.11.1.js',
+                    'commons/js/jquery-ui.min.js',
+                    'commons/js/bootstrap.min.js',
+                    'commons/js/bootstrap-hogan-2.0.0.js',
+                    'commons/js/bootstrap-typeahead.min.js',
+                    'commons/ckeditor/ckeditor.js',
+                    'commons/ckeditor/adapters/jquery.js',
+                    'commons/js/jquery.datetimepicker.js'
+                ),
+                'css/administration.css' => array(
+                    'commons/css/bootstrap.min.css',
+                    'commons/css/bootstrap-typeahead.css',
+                    'commons/css/font-awesome.min.css',
+                    'commons/css/jquery.datetimepicker.css'
+                ),
+            ),
+            'paths' => array(
+                __DIR__ . '/../public',
+                __DIR__ . '/../../../../public'
+            ),
+        ),
+    ),
     'bjyauthorize' => array(
         'guards' => array(
             'BjyAuthorize\Guard\Route' => array(
