@@ -1,29 +1,67 @@
-### ShineISP 2
-ShineISP is a **billing system** to **manage your customers** (CMS, eCommerce, CRM, ERP) like WHMCS and WHMAP, Parallels Plesk Billing, AWBS (Advanced Webhosting Billing System) and ClientExec.
+# Core Module
+This module contain the main dependencies for ShineISP 2
 
-Requirements
-------------
+## Prerequisites
+You will need:
+* [Git](http://git-scm.com/)
+* [Composer](https://getcomposer.org/)
+* [ShineISP 2](http://www.shineisp.com)
 
-The dependencies for ShineISP are set up as Git submodules so you should not have to mess with dependencies.
+## Apache Configuration
 
-* PHP 5.4+ (With short tags enabled)
-* [Zend Framework 2](https://github.com/zendframework/zf2) (latest master)
-* [ZfcBase](https://github.com/ZF-Commons/ZfcBase)
-* [ZfcUser](https://github.com/ZF-Commons/ZfcUser)
+Now we have to tell to our Apache webserver that we have a new site called shineisp.it (the tld could be changed properly as you like)
+Open the /etc/hosts file and type:
 
-Why Zend Framework 2?
----------------------
+    127.0.0.1 shineisp.it www.shineisp.it
 
-Simple: The ZF2 module system is awesome and provides the perfect foundation for
-a project with goals such as ours.
+Create a new file by your preferite text editor I am using the "nano":
 
-Installation
-------------
+    sudo nano /etc/apache2/sites-available/shineisp.conf
 
-* Run `git clone https://github.com/shineisp/core.git` and
-  set up a vhost pointing to the public directory.
-* Install with Composer -- http://getcomposer.org
-  * `cd shineisp && ../composer.phar install`
-* Launch the app from the browser, you will be propted for db info/etc
-  * installation module will be created soon
- 
+and paste this text:
+
+	<VirtualHost *:80>
+		ServerName shineisp.it
+		ServerAlias www.shineisp.it
+		DocumentRoot /var/www/PROJECT-FOLDER/public
+		SetEnv APPLICATION_ENV "development"
+		<Directory /var/www/PROJECT-FOLDER/public>
+		    DirectoryIndex index.php
+		    AllowOverride All
+		    Order allow,deny
+		    Allow from all
+		</Directory>
+	</VirtualHost>
+
+and then enable the website configuration by this shell command:
+
+    sudo a2ensite shineisp
+
+and reload the Apache configuration by this shell command:
+
+    service apache2 reload
+
+## Getting Started
+To get the application running, perform the following steps:
+
+1. Create a new application by Zend Framework 2 cloning the [Skeleton](http://framework.zend.com/manual/current/en/user-guide/skeleton-application.html).
+2. After creation, paste the following JSON into the "composer.json" text file within the repositories section:
+
+```json
+    [
+        {
+            "type": "vcs",
+            "url": "https://github.com/shineisp/Core"
+        }
+    ],
+```
+3. Run the following commands from the console:
+
+  ```bash
+  cd /var/www/YOUR-INSTALLATION-PATH
+  composer update
+  ```
+
+4. Navigate to [www.your-shineisp-domain.com].
+
+5. Hooray! Now open your preferite browser and type: http://www.shineisp.it/ you will see the standard Zend Framework page! Now you can see the module in action! How simple was that??
