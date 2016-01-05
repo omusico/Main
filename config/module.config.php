@@ -102,7 +102,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Core\Controller\Index' => 'Core\Controller\IndexController'
+            'Main\Controller\Index' => 'Main\Controller\IndexController'
         ),
     ),
     'view_manager' => array(
@@ -113,7 +113,7 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'core/index/index' => __DIR__ . '/../view/core/index/index.phtml',
+            'main/index/index' => __DIR__ . '/../view/main/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
