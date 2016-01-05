@@ -19,7 +19,7 @@ return array(
 
         // ShineISP modules start
         // pay attention: the position of the module affects the routes and the assets
-        'Core',
+        'Main',
         'Base',
         'Admin',
     ),

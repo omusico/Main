@@ -11,21 +11,26 @@ return array(
     'asset_manager' => array(
         'resolver_configs' => array(
             'collections' => array(
-                'js/administration.js' => array(
+                'js/application.js' => array(
                     'commons/js/jquery-1.11.1.js',
-                    'commons/js/jquery-ui.min.js',
                     'commons/js/bootstrap.min.js',
                     'commons/js/bootstrap-hogan-2.0.0.js',
                     'commons/js/bootstrap-typeahead.min.js',
+                    'commons/js/jquery.easing.min.js',
+                    'js/scrolling-nav.js',
+                    'commons/js/classie.js',
+                    'js/frontend.js',
+                ),
+                'js/ckeditor.js' => array(
+                    'js/ckeditor.path.js',
                     'commons/ckeditor/ckeditor.js',
                     'commons/ckeditor/adapters/jquery.js',
-                    'commons/js/jquery.datetimepicker.js'
+                    'js/ckeditor.config.js',
                 ),
-                'css/administration.css' => array(
+                'css/application.css' => array(
                     'commons/css/bootstrap.min.css',
                     'commons/css/bootstrap-typeahead.css',
                     'commons/css/font-awesome.min.css',
-                    'commons/css/jquery.datetimepicker.css'
                 ),
             ),
             'paths' => array(
@@ -39,7 +44,7 @@ return array(
             'BjyAuthorize\Guard\Route' => array(
 
                 // ZfcUser module
-                array('route' => 'core', 'roles' => array('guest')),
+                array('route' => 'main', 'roles' => array('guest')),
 
             ),
         ),
@@ -52,7 +57,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Core\Controller\Index',
+                        'controller' => 'Main\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -61,12 +66,12 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'core' => array(
+            'main' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Core\Controller',
+                        '__NAMESPACE__' => 'Main\Controller',
                         'controller'    => 'Index',
                         'action'        => 'index',
                     ),
