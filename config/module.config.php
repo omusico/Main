@@ -31,6 +31,7 @@ return array(
                     'commons/css/bootstrap.min.css',
                     'commons/css/bootstrap-typeahead.css',
                     'commons/css/font-awesome.min.css',
+                    'css/site.css',
                 ),
             ),
             'paths' => array(
@@ -55,7 +56,7 @@ return array(
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
-                    'route'    => '/',
+                    'route'    => '/main',
                     'defaults' => array(
                         'controller' => 'Main\Controller\Index',
                         'action'     => 'index',
