@@ -46,12 +46,7 @@ return array(
             'main' => array(
                 'label' => _('Home'),
                 'route' => 'home',
-            ),
-            'contact' => array(
-                'label' => _('Contact us'),
-                'route' => 'contact',
-                'order' => '1000',
-            ),
+            )
         ),
     ),
     'bjyauthorize' => array(
