@@ -2,12 +2,13 @@
 /**
  * Zend Framework (http://framework.zend.com/)
  *
- * @link      http://github.com/zendframework/ZendSkeletoncms for the canonical source repository
+ * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
  * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
 return array(
+
     'asset_manager' => array(
         'resolver_configs' => array(
             'collections' => array(
@@ -40,26 +41,38 @@ return array(
             ),
         ),
     ),
-    'bjyauthorize' => array(
-        'guards' => array(
-            'BjyAuthorize\Guard\Route' => array(
-
-                // ZfcUser module
-                array('route' => 'main', 'roles' => array('guest')),
-
+    'navigation' => array(
+        'default' => array(
+            'application' => array(
+                'label' => _('Home'),
+                'route' => 'home',
+            ),
+            'contact' => array(
+                'label' => _('Contact us'),
+                'route' => 'contact',
+                'order' => '1000',
             ),
         ),
     ),
-
+    'bjyauthorize' => array(
+        'guards' => array(
+            'BjyAuthorize\Guard\Route' => array(
+                // Generic route guards
+                array('route' => 'home', 'roles' => array('guest')),
+                array('route' => 'application', 'roles' => array('guest')),
+                array('route' => 'application/default', 'roles' => array('guest')),
+            ),
+        ),
+    ),
     'router' => array(
         'routes' => array(
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
-                    'route'    => '/main',
+                    'route' => '/',
                     'defaults' => array(
-                        'controller' => 'Main\Controller\Index',
-                        'action'     => 'index',
+                        'controller' => 'Application\Controller\Index',
+                        'action' => 'index',
                     ),
                 ),
             ),
@@ -67,28 +80,27 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'main' => array(
-                'type'    => 'Literal',
+            'application' => array(
+                'type' => 'Literal',
                 'options' => array(
-                    'route'    => '/',
+                    'route' => '/application',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Main\Controller',
-                        'controller'    => 'Index',
-                        'action'        => 'index',
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller' => 'Index',
+                        'action' => 'index',
                     ),
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
                     'default' => array(
-                        'type'    => 'Segment',
+                        'type' => 'Segment',
                         'options' => array(
-                            'route'    => '/[:controller[/:action]]',
+                            'route' => '/[:controller[/:action]]',
                             'constraints' => array(
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                             ),
-                            'defaults' => array(
-                            ),
+                            'defaults' => array(),
                         ),
                     ),
                 ),
@@ -100,23 +112,32 @@ return array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
+        'aliases' => array(
+            'translator' => 'MvcTranslator',
+        ),
+        'factories' => array(
+            'navigation' => function ($sm) {
+                $navigation = new \Zend\Navigation\Service\DefaultNavigationFactory;
+                $navigation = $navigation->createService($sm);
+                return $navigation;
+            }
+        ),
     ),
+
     'controllers' => array(
         'invokables' => array(
-            'Main\Controller\Index' => 'Main\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController'
         ),
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
-        'display_exceptions'       => true,
-        'doctype'                  => 'HTML5',
-        'not_found_template'       => 'error/404',
-        'exception_template'       => 'error/index',
+        'display_exceptions' => true,
+        'doctype' => 'HTML5',
         'template_map' => array(
-            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'main/index/index' => __DIR__ . '/../view/main/index/index.phtml',
-            'error/404'               => __DIR__ . '/../view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'header' => __DIR__ . '/../view/partial/header.phtml',
+            'footer' => __DIR__ . '/../view/partial/footer.phtml',
+            'layout/layout' => __DIR__ . '/../view/layout/frontend.phtml',
+            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
@@ -125,8 +146,7 @@ return array(
     // Placeholder for console routes
     'console' => array(
         'router' => array(
-            'routes' => array(
-            ),
+            'routes' => array(),
         ),
     ),
 );
