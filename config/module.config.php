@@ -2,7 +2,7 @@
 /**
  * Zend Framework (http://framework.zend.com/)
  *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
+ * @link      http://github.com/zendframework/ZendSkeletonMain for the canonical source repository
  * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
@@ -12,7 +12,7 @@ return array(
     'asset_manager' => array(
         'resolver_configs' => array(
             'collections' => array(
-                'js/application.js' => array(
+                'js/main.js' => array(
                     'commons/js/jquery-1.11.1.js',
                     'commons/js/bootstrap.min.js',
                     'commons/js/bootstrap-hogan-2.0.0.js',
@@ -28,7 +28,7 @@ return array(
                     'commons/ckeditor/adapters/jquery.js',
                     'js/ckeditor.config.js',
                 ),
-                'css/application.css' => array(
+                'css/main.css' => array(
                     'commons/css/bootstrap.min.css',
                     'commons/css/bootstrap-typeahead.css',
                     'commons/css/font-awesome.min.css',
@@ -43,7 +43,7 @@ return array(
     ),
     'navigation' => array(
         'default' => array(
-            'application' => array(
+            'main' => array(
                 'label' => _('Home'),
                 'route' => 'home',
             ),
@@ -59,8 +59,8 @@ return array(
             'BjyAuthorize\Guard\Route' => array(
                 // Generic route guards
                 array('route' => 'home', 'roles' => array('guest')),
-                array('route' => 'application', 'roles' => array('guest')),
-                array('route' => 'application/default', 'roles' => array('guest')),
+                array('route' => 'main', 'roles' => array('guest')),
+                array('route' => 'main/default', 'roles' => array('guest')),
             ),
         ),
     ),
@@ -71,7 +71,7 @@ return array(
                 'options' => array(
                     'route' => '/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'Main\Controller\Index',
                         'action' => 'index',
                     ),
                 ),
@@ -79,13 +79,13 @@ return array(
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
-            'application' => array(
+            // using the path /main/:controller/:action
+            'main' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route' => '/application',
+                    'route' => '/main',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
+                        '__NAMESPACE__' => 'Main\Controller',
                         'controller' => 'Index',
                         'action' => 'index',
                     ),
@@ -126,7 +126,7 @@ return array(
 
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Main\Controller\Index' => 'Main\Controller\IndexController'
         ),
     ),
     'view_manager' => array(
@@ -137,7 +137,7 @@ return array(
             'header' => __DIR__ . '/../view/partial/header.phtml',
             'footer' => __DIR__ . '/../view/partial/footer.phtml',
             'layout/layout' => __DIR__ . '/../view/layout/frontend.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+            'main/index/index' => __DIR__ . '/../view/main/index/index.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
