@@ -22,7 +22,7 @@
         "tecnickcom/tcpdf":                     "dev-master",
         "cderue/googlemaps":                    "dev-master",
         "rwoverdijk/assetmanager":              "*",
-        "phly/phly-contact":                    "dev-master"
+        "willdurand/geocoder":"*"
     },
     "autoload": {
       "psr-0": {
